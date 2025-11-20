@@ -1,83 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mistyle.css" type="text/css">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zolden — Boutique</title>
+  <meta name="description" content="Boutique — collections femme, homme, accessoires. Page d'accueil sémantique." />
+  <!-- Lien vers ton CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Mon delf</h1>
-        <nav>
-          <ul>
-            <li>Accueil</li>
-            <li>À propos</li>
-            <li>Services</li>
-            <li>Espace Ressources</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      </header>
-    
-      <section class="apropos">
-        <h2>À propos</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel...</p>
-        <button>En savoir plus</button>
+  <!-- HEADER -->
+  <header role="banner">
+    <div class="topbar">
+      <a class="brand" href="/" aria-label="Zolden — Accueil">Zolden</a>
+      <div class="top-actions">
+        <a href="/search" aria-label="recherche">🔍</a>
+        <a href="/account" aria-label="mon compte">Compte</a>
+        <a href="/cart" aria-label="panier">Panier</a>
+      </div>
+    </div>
+
+    <!-- Navigation principale -->
+    <nav role="navigation" aria-label="Navigation principale">
+      <ul class="main-nav">
+        <li><a href="/nouveautes">Nouveautés</a></li>
+        <li><a href="/femmes">Femmes</a></li>
+        <li><a href="/hommes">Hommes</a></li>
+        <li><a href="/accessoires">Accessoires</a></li>
+        <li><a href="/soldes">Soldes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main role="main">
+    <!-- Hero / bannière principale -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img src="hero.jpg" alt="Portrait d'une personne dans un champ" />
+      </div>
+      <div class="hero-content" id="hero-title">
+        <h1>Goodbye stereotypes. Hello Zerotypes.</h1>
+        <p>Collections inclusives | Livraison rapide</p>
+        <p><a class="btn" href="/shop">Shop Now</a></p>
+      </div>
+    </section>
+
+    <!-- Section catégories en mise en avant -->
+    <section class="categories" aria-labelledby="categories-title">
+      <h2 id="categories-title" class="visually-hidden">Catégories en vedette</h2>
+      <ul class="category-grid">
+        <li class="category-item">
+          <a href="/accessoires">
+            <figure>
+              <img src="sac-fleurs.jpg" alt="Sac brodé" />
+              <figcaption>Accessoires — Sacs &amp; Soin</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li class="category-item">
+          <a href="/femmes">
+            <figure>
+              <img src="femme-cardigan.jpg" alt="Femme portant un cardigan" />
+              <figcaption>Femmes — Nouveautés</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li class="category-item">
+          <a href="/hommes">
+            <figure>
+              <img src="homme-costume.jpg" alt="Homme en costume décontracté" />
+              <figcaption>Hommes — Tenues</figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Liste de produits (grille) -->
+    <section class="product-list" aria-labelledby="products-title">
+      <h2 id="products-title">Produits populaires</h2>
+      <div class="grid" role="list">
+        <!-- Exemple d'article produit (structure sémantique + schema.org) -->
+        <article class="product-card" role="listitem" itemscope itemtype="http://schema.org/Product">
+          <a href="/product/t-shirt-everyone" itemprop="url">
+            <figure>
+              <img src="tshirt-1.jpg" alt="T-shirt vert" itemprop="image" />
+              <figcaption>
+                <span itemprop="name">T-shirt pour tous</span>
+              </figcaption>
+            </figure>
+            <div class="product-meta">
+              <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="EUR">€</span>
+                <span itemprop="price">29.00</span>
+                <link itemprop="availability" href="http://schema.org/InStock" />
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Produit 2 -->
+        <article class="product-card" role="listitem" itemscope itemtype="http://schema.org/Product">
+          <a href="/product/chemise-rayee" itemprop="url">
+            <figure>
+              <img src="chemise-2.jpg" alt="Chemise rayée" itemprop="image" />
+              <figcaption><span itemprop="name">Chemise rayée</span></figcaption>
+            </figure>
+            <div class="product-meta">
+              <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <span itemprop="priceCurrency" content="EUR">€</span>
+                <span itemprop="price">60.00</span>
+                <link itemprop="availability" href="http://schema.org/InStock" />
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Produit 3 (avec promotion) -->
+        <article class="product-card" role="listitem" itemscope itemtype="http://schema.org/Product">
+          <a href="/product/jean-slim" itemprop="url">
+            <figure>
+              <img src="jean-3.jpg" alt="Jean slim bleu" itemprop="image" />
+              <figcaption><span itemprop="name">Jean slim</span></figcaption>
+            </figure>
+            <div class="product-meta">
+              <p class="price">
+                <span class="old-price" aria-hidden="true">€90.00</span>
+                <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <span itemprop="priceCurrency" content="EUR">€</span>
+                  <span itemprop="price">60.00</span>
+                  <link itemprop="availability" href="http://schema.org/InStock" />
+                </span>
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Ajoute autant d'articles que nécessaire -->
+      </div>
+    </section>
+
+    <!-- Bannière secondaire / CTA -->
+    <aside class="promo" role="complementary" aria-labelledby="promo-title">
+      <h2 id="promo-title">T-shirts pour tout le monde</h2>
+      <p>Découvrez notre sélection de t-shirts durables et confortables.</p>
+      <a class="btn" href="/collections/tshirts">Shop Now</a>
+      <img src="promo-tshirt.jpg" alt="Jeune homme sur la plage portant un t-shirt" />
+    </aside>
+
+    <!-- Section d'aides / services -->
+    <section class="services" aria-labelledby="services-title">
+      <h2 id="services-title" class="visually-hidden">Services</h2>
+      <ul class="services-list">
+        <li><strong>Livraison</strong><br/>Livraison sous 48h</li>
+        <li><strong>Retours</strong><br/>Retours gratuits 30 jours</li>
+        <li><strong>Paiement sécurisé</strong><br/>Cartes, PayPal, etc.</li>
+        <li><strong>Support</strong><br/>chat et email</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <section class="footer-column" aria-labelledby="footer-customer">
+        <h3 id="footer-customer">Service client</h3>
+        <ul>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/livraison">Livraison</a></li>
+          <li><a href="/retours">Retours</a></li>
+        </ul>
       </section>
-    
-      <section class="services">
-        <h2>Services</h2>
-        <div class="card-container">
-          <div class="card">
-            <h3>Examens Blancs</h3>
-            <p>Description courte ici.</p>
-            <button>Plus de détails</button>
-          </div>
-          <div class="card">
-            <h3>Entraînements à la carte</h3>
-            <p>Description courte ici.</p>
-            <button>Plus de détails</button>
-          </div>
-          <div class="card">
-            <h3>Leçons</h3>
-            <p>Description courte ici.</p>
-            <button>Plus de détails</button>
-    [14:57, 19/11/2025] ChatGPT: </div>
-        </div>
+
+      <section class="footer-column" aria-labelledby="footer-about">
+        <h3 id="footer-about">À propos</h3>
+        <ul>
+          <li><a href="/a-propos">Notre histoire</a></li>
+          <li><a href="/carriere">Carrières</a></li>
+        </ul>
       </section>
-    
-      <section class="ressources">
-        <h2>Espace ressources</h2>
-        <div class="card-container">
-          <div class="card">
-            <h3>Conseils</h3>
-            <p>Description rapide ici.</p>
-          </div>
-          <div class="card">
-            <h3>Ressources Gratuites</h3>
-            <p>Description rapide ici.</p>
-          </div>
-          <div class="card">
-            <h3>Info DELF</h3>
-            <p>Description rapide ici.</p>
-          </div>
-        </div>
-      </section>
-    
-      <section class="contact">
-        <h2>Vous avez une question ?</h2>
-        <form>
-          <input type="text" placeholder="Nom">
-          <input type="email" placeholder="Email">
-          <textarea placeholder="Votre message"></textarea>
-          <button type="submit">Envoyer</button>
+
+      <section class="footer-column" aria-labelledby="footer-newsletter">
+        <h3 id="footer-newsletter">Newsletter</h3>
+        <form action="/newsletter" method="post" aria-label="inscription newsletter">
+          <label for="email" class="visually-hidden">Votre adresse e-mail</label>
+          <input id="email" name="email" type="email" placeholder="Votre e-mail" required />
+          <button type="submit">S'inscrire</button>
         </form>
       </section>
-    
-      <footer>
-        <p>© 2025 Mon Delf</p>
-      </footer>
-    
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <time datetime="2025">2025</time> Zolden. Tous droits réservés.</p>
+      <nav aria-label="liens bas de page">
+        <ul>
+          <li><a href="/politique-confidentialite">Politique de confidentialité</a></li>
+          <li><a href="/conditions">Conditions générales</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- (Optionnel) petit script pour améliorer l'accessibilité -->
+  <script>
+    // Exemple : ajouter un focus style pour navigation clavier
+    document.documentElement.classList.remove('no-js');
+  </script>
 </body>
 </html>
